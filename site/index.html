@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b31b1b">
+<meta name="description" content="The HEP Signal: an independent weekly selection of 7–10 noteworthy new arXiv hep-ph preprints, with context, perspective and honorable mentions.">
+<title>The HEP Signal — Finding what matters above the background</title>
+<style>
+:root{
+  /* arXiv-inspired, independently applied editorial colors */
+  --red:#b31b1b;--red-dark:#8f1718;--red-pale:#fff0ee;
+  --ink:#1c1a17;--charcoal:#282420;--muted:#6b6459;
+  --bg:#f9f7f7;--paper:#ffffff;--border:#e5dfdd;
+  --warm:#f1eae7;--blue:#1f5e96;--blue-wash:#ecf3f8;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.page{max-width:1240px;margin:auto;padding:0 42px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+.top-strip{background:var(--ink);color:#e8e1df;border-top:4px solid var(--red);font-size:11px;letter-spacing:.035em}
+.top-strip .page{display:flex;align-items:center;justify-content:space-between;min-height:36px;gap:20px}
+.top-strip span:last-child{letter-spacing:.13em;text-transform:uppercase;color:#f2a3a2}
+.nav{background:#fff;border-bottom:1px solid var(--border)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{height:40px;width:40px;display:grid;place-items:center;color:var(--red);border:1.5px solid var(--red);border-radius:50%;background:#fff}
+.brand-mark svg{height:27px;width:27px}
+.brand-name{display:block;font-family:var(--serif);font-weight:700;font-size:26px;letter-spacing:-.04em;line-height:1.05}
+.brand-secondary{display:block;font-weight:700;font-size:9px;line-height:1.8;letter-spacing:.21em;text-transform:uppercase;margin-top:2px;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:650}
+.nav-links>a:not(.btn):hover{color:var(--red)}
+.btn{background:var(--red);padding:13px 20px;color:#fff;border:1px solid var(--red);font-size:13px;font-weight:730;display:inline-flex;align-items:center;gap:11px;justify-content:center;transition:background .18s,transform .18s}
+.btn:hover{background:var(--red-dark);transform:translateY(-1px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.btn.light{background:transparent;color:#fff;border-color:#d9bbb7}.btn.light:hover{background:#ffffff14}
+.hero{padding:86px 0 95px;overflow:hidden;position:relative;background:radial-gradient(ellipse at 15% 20%,#fff 0%,transparent 59%),var(--bg)}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:65px}
+.hero .eyebrow{color:var(--red)}
+.hero h1{font-family:var(--serif);letter-spacing:-.055em;font-size:clamp(52px,6.1vw,87px);font-weight:500;line-height:1.02;margin:24px 0 23px}
+.hero h1 em{color:var(--red);font-style:normal}
+.hero .dek{color:#39332e;font-family:var(--serif);font-size:24px;line-height:1.44;max-width:580px;margin:0 0 27px}
+.hero .intro{font-size:15px;line-height:1.85;color:var(--muted);max-width:555px;margin-bottom:30px}
+.hero-meta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.095em;font-weight:720}
+.hero-meta span:not(:last-child)::after{content:'·';padding-left:14px;color:#bcaeaa}
+.signal-card{position:relative;min-height:485px;padding:29px 32px;box-shadow:18px 18px 0 #eee5e2;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.signal-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 38%,#6c24271b 0,transparent 48%);pointer-events:none}
+.signal-card .issue{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #ffffff30;padding-bottom:16px;position:relative;z-index:2}
+.signal-card .issue .eyebrow{color:#f4b7b2}.signal-card .issue small{font-size:10px;color:#c9c1bc;letter-spacing:.12em}
+.signal-card .signal-viz{width:100%;height:auto;display:block;position:relative;margin:0}
+.signal-viz-wrap{position:relative;margin:14px 0 -6px}
+.signal-motion-toggle{position:absolute;right:0;bottom:4px;background:transparent;border:0;color:#c7bdb7;font:600 10px var(--sans);letter-spacing:.085em;text-transform:uppercase;padding:6px 3px;cursor:pointer;z-index:3}
+.signal-motion-toggle:hover{color:#fff}
+.signal-motion-toggle:focus-visible{outline:2px solid #ff7772;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.signal-motion-toggle{display:none}}
+.signal-card h2{position:relative;z-index:2;font-family:var(--serif);font-size:clamp(31px,3.2vw,45px);font-weight:400;letter-spacing:-.045em;line-height:1.16;max-width:400px;margin:9px 0}
+.signal-card h2 strong{font-weight:400;color:#fa9290}
+.signal-card p{position:relative;z-index:2;font-size:13px;line-height:1.72;color:#d8cfcb;max-width:370px;margin:4px 0 16px}
+.signal-card .bottom{position:relative;z-index:2;border-top:1px solid #ffffff30;padding-top:17px;display:flex;align-items:center;justify-content:space-between;gap:13px}
+.signal-card .bottom strong{font-size:11px;font-weight:650;letter-spacing:.085em;text-transform:uppercase}
+.signal-card .bottom span{font-size:13px;color:#ffaaa5;letter-spacing:.08em}
+.rule{border-top:1px solid var(--border)}.section{padding:88px 0}
+.section-head{max-width:750px;margin-bottom:35px}
+.section .eyebrow{color:var(--red)}
+.section h2{font-family:var(--serif);font-weight:500;letter-spacing:-.043em;font-size:clamp(34px,4vw,50px);line-height:1.15;margin:18px 0}
+.section-head p{font-size:15px;line-height:1.85;color:var(--muted);max-width:710px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.tile{border:1px solid var(--border);border-top:3px solid var(--red);background:var(--paper);padding:31px;min-height:245px}
+.tile .num{font-size:11px;letter-spacing:.1em;font-weight:780;color:var(--red)}
+.tile h3{font-family:var(--serif);font-size:26px;letter-spacing:-.036em;font-weight:500;line-height:1.2;margin:24px 0 11px}
+.tile p{font-size:13px;color:var(--muted);line-height:1.8;margin:0}
+.focus{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.focus-in{display:grid;grid-template-columns:1fr 1.36fr;gap:54px;align-items:start}
+.focus .section-head{margin-bottom:0}
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.topic{font-size:13px;font-weight:670;padding:17px 19px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:space-between}
+.topic span:last-child{color:var(--red);font-size:16px}
+.topic:hover{border-color:var(--red);background:#fff3f0}.topic:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.manifesto{background:var(--ink);color:#fff;padding:76px 0}
+.manifesto-in{display:grid;grid-template-columns:1fr 1.22fr;gap:65px;align-items:center}
+.manifesto .eyebrow{color:#f2a3a2}
+.manifesto h2{font-family:var(--serif);font-size:clamp(36px,4vw,55px);letter-spacing:-.042em;font-weight:400;line-height:1.13;margin:18px 0}
+.manifesto h2 em{font-style:normal;color:#f39a97}
+.manifesto p{line-height:1.9;color:#ded4cf;font-size:15px;margin:0 0 15px}
+.signup{padding:90px 0 94px;text-align:center;background:linear-gradient(180deg,var(--bg),#fff)}
+.signup .eyebrow{color:var(--red)}
+.signup h2{font-family:var(--serif);font-size:clamp(43px,5.2vw,67px);font-weight:400;letter-spacing:-.05em;margin:16px 0}
+.signup p{line-height:1.8;color:var(--muted);font-size:15px;max-width:565px;margin:0 auto 26px}
+.signup .note{margin-top:17px;font-size:11px;color:var(--muted)}
+.foot{border-top:1px solid var(--border);padding:29px 0 35px;background:#fff;color:var(--muted);font-size:12px}
+.foot-in{display:flex;align-items:start;justify-content:space-between;gap:40px}.foot p{line-height:1.75;margin:6px 0}.foot b{color:var(--ink)}
+.foot a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:900px){.hero-in,.focus-in,.manifesto-in{grid-template-columns:1fr}.hero{padding:65px 0}.signal-card{max-width:590px}.three{grid-template-columns:1fr}.tile{min-height:unset}.nav-links{gap:18px}.nav-links .nav-extra{display:none}.section{padding:64px 0}}
+@media(max-width:570px){.page{padding:0 22px}.top-strip span:last-child{display:none}.top-strip .page{min-height:35px}.nav-in{min-height:76px}.nav-links>a:not(.btn){display:none}.brand-name{font-size:20px}.brand-mark{width:35px;height:35px}.brand-mark svg{width:23px;height:23px}.btn{padding:12px 13px}.hero{padding:51px 0 63px}.hero h1{font-size:clamp(51px,12vw,64px)}.hero .dek{font-size:20px}.hero-in{gap:38px}.signal-card{min-height:430px;padding:24px 21px;box-shadow:9px 9px 0 #eee5e2}.signal-card h2{font-size:35px}.topics{grid-template-columns:1fr}.section{padding:60px 0}.manifesto{padding:60px 0}.signup{padding:72px 0}.foot-in{display:block}}
+
+/* Embedded form mount: consistent with the established homepage layout. EmailOctopus styles its own form. */
+.emailoctopus-inline-embed{width:100%;max-width:550px;margin:32px auto 8px;text-align:left;min-height:70px}
+.emailoctopus-inline-embed iframe{max-width:100%;display:block;margin:0 auto}
+</style>
+</head>
+<body>
+<div class="top-strip"><div class="page"><span>Independent weekly editorial selection · arXiv hep-ph</span><span>Beyond the background · Every Friday</span></div></div>
+<header class="nav"><div class="page nav-in">
+<a class="brand" href="/#top" aria-label="The HEP Signal home">
+<span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 24.5H9L12 21L15 25L20 6L24 29L27 21L30 24.5H34" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+<span><span class="brand-name">The HEP Signal</span><span class="brand-secondary">An independent hep-ph newsletter</span></span></a>
+<nav class="nav-links" aria-label="Main navigation"><a class="nav-extra" href="/archive/">Review archive</a><a class="nav-extra" href="#mission">Our mission</a><a class="nav-extra" href="#topics">Across hep-ph</a><a href="#how-it-works">The selection</a><a class="btn" href="#subscribe">Subscribe <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="top"><section class="hero"><div class="page hero-in">
+<div><div class="eyebrow">New ideas. Clearer perspective.</div><h1>Finding the<br><em>signal</em> above<br>the background.</h1>
+<p class="dek">Good science should not get lost in a crowded preprint landscape.</p>
+<p class="intro">Every Friday, we survey that week's new arXiv <strong>hep-ph</strong> submissions and select <strong>7–10 noteworthy papers</strong> from across high-energy physics phenomenology. Thoughtful summaries, scientific context, and honorable mentions—without the hype.</p>
+<a href="#subscribe" class="btn">Get the Friday edition <span aria-hidden="true">↗</span></a>
+<div class="hero-meta"><span>7–10 main selections</span><span>Honorable mentions</span><span>Free every Friday</span></div>
+</div>
+<aside class="signal-card" aria-label="An illustration of a signal emerging from a background of submissions">
+<div class="issue"><div class="eyebrow">Inside each issue</div><small>ONE WEEK · ALL OF hep-ph</small></div>
+<div class="signal-viz-wrap"><svg class="signal-viz" id="hep-signal-plot" viewBox="0 0 440 224" role="img" aria-labelledby="signal-title signal-desc">
+<title id="signal-title">Signal and background motif</title><desc id="signal-desc">A cluster of small subdued marks and one prominent crimson peak, representing editorial discovery rather than a quantitative measurement.</desc>
+<defs><linearGradient id="peakFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c53534" stop-opacity=".4"/><stop offset="1" stop-color="#c53534" stop-opacity="0"/></linearGradient></defs>
+<g stroke="#ffffff" stroke-opacity=".075" stroke-width="1"><path d="M0 32H440M0 82H440M0 132H440M0 182H440"/><path d="M40 0V204M120 0V204M200 0V204M280 0V204M360 0V204"/></g>
+<path id="hep-signal-area" d="M0 174 L16 170 31 177 48 166 67 169 85 173 104 162 123 170 142 164 160 174 177 168 195 170 210 161 224 165 237 149 250 105 263 37 276 101 290 154 305 170 324 161 344 171 361 166 380 174 398 160 418 169 440 166 L440 204 L0 204 Z" fill="url(#peakFill)"/>
+<path id="hep-signal-trace" d="M0 174 L16 170 31 177 48 166 67 169 85 173 104 162 123 170 142 164 160 174 177 168 195 170 210 161 224 165 237 149 250 105 263 37 276 101 290 154 305 170 324 161 344 171 361 166 380 174 398 160 418 169 440 166" stroke="#e0a4a0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<path id="hep-signal-peak" d="M237 149 L250 105 263 37 276 101 290 154" stroke="#ff7772" stroke-width="3.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle id="hep-signal-marker" cx="263" cy="37" r="5.5" fill="#ff7772"/><circle id="hep-signal-ring" cx="263" cy="37" r="13" fill="none" stroke="#ff7772" stroke-opacity=".4" stroke-width="1.5"/>
+<g fill="#d7c7c0" opacity=".38"><circle cx="33" cy="53" r="1.7"/><circle cx="64" cy="88" r="1.4"/><circle cx="116" cy="39" r="2"/><circle cx="152" cy="107" r="1.5"/><circle cx="175" cy="50" r="1.4"/><circle cx="218" cy="91" r="1.5"/><circle cx="320" cy="47" r="1.8"/><circle cx="359" cy="87" r="1.6"/><circle cx="413" cy="55" r="2"/><circle cx="389" cy="127" r="1.4"/></g>
+<text id="hep-signal-discover" x="272" y="18" fill="#ffaaa5" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">DISCOVER</text>
+<text x="1" y="221" fill="#c7bdb7" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.2">THE WEEK'S SUBMISSIONS</text>
+</svg><button class="signal-motion-toggle" id="hep-signal-motion-toggle" type="button" aria-label="Pause signal animation" aria-pressed="false">Pause</button></div>
+<div><h2>Strong ideas deserve <strong>a closer look.</strong></h2><p>One cover signal. Seven to ten selected papers. Honorable mentions, and context beyond the abstracts.</p></div>
+<div class="bottom"><strong>Curiosity, not a verdict</strong><span>NEXT ISSUE →</span></div>
+</aside>
+</div></section>
+<section class="section rule" id="mission"><div class="page"><div class="section-head"><div class="eyebrow">Why we exist</div><h2>Not another list of abstracts.</h2><p>New arXiv papers arrive every week, faster than any one researcher can read. The HEP Signal is a curated reading guide: a way to discover substantive work outside your immediate specialty and understand why it may matter. A selection is an invitation to read—not a judgment on everything left out.</p></div>
+<div class="three" id="how-it-works">
+<article class="tile"><div class="num">01 / SURVEY</div><h3>One week. The whole category.</h3><p>We examine new hep-ph submissions across the field, rather than rotating among favored topics or research groups.</p></article>
+<article class="tile"><div class="num">02 / EXTRACT</div><h3>Scientific substance first.</h3><p>Originality, methodological advances, relevance and testability matter more than name recognition or attention-grabbing claims.</p></article>
+<article class="tile"><div class="num">03 / INTERPRET</div><h3>Beyond the abstract.</h3><p>We explain the contribution, why it matters, important caveats and what the community should watch next.</p></article>
+</div></div></section>
+<section class="section focus" id="topics"><div class="page focus-in"><div class="section-head"><div class="eyebrow">Across hep-ph</div><h2>Follow the science, wherever it leads.</h2><p>Every Friday's selection comes from that week's submissions. There is no fixed quota per discipline: the strength of the research drives the coverage.</p></div>
+<div class="topics"><a class="topic" href="/archive/?topic=qcd">QCD &amp; hadron physics <span>↗</span></a><a class="topic" href="/archive/?topic=colliders">Collider phenomenology <span>↗</span></a><a class="topic" href="/archive/?topic=higgs-electroweak">Higgs &amp; electroweak physics <span>↗</span></a><a class="topic" href="/archive/?topic=flavor-precision">Flavor &amp; precision tests <span>↗</span></a><a class="topic" href="/archive/?topic=neutrinos-astroparticle">Neutrinos &amp; astroparticle physics <span>↗</span></a><a class="topic" href="/archive/?topic=cosmology-baryogenesis">Cosmology &amp; baryogenesis <span>↗</span></a><a class="topic" href="/archive/?topic=dark-matter">Dark matter &amp; hidden sectors <span>↗</span></a><a class="topic" href="/archive/?topic=eft-bsm">Effective field theory &amp; BSM <span>↗</span></a></div>
+</div></section>
+<!-- LATEST_ISSUE_START -->
+<!-- Populated automatically by the build script. -->
+<!-- LATEST_ISSUE_END -->
+<section class="manifesto"><div class="page manifesto-in"><div><div class="eyebrow">Our editorial standard</div><h2>Discover the <em>signal.</em><br>Keep the nuance.</h2></div>
+<div><p>Our signal-versus-background language is a metaphor for navigating a large body of research, not a numerical significance test or a statement that other manuscripts lack value.</p><p>We aim to reward originality, meaningful technical progress, reproducibility and credible paths to new knowledge. Our selections are informed editorial assessments, not peer review or a guarantee that every claim has been independently verified.</p></div></div></section>
+<section class="signup" id="subscribe"><div class="page"><div class="eyebrow">Join the reading list</div><h2>Make Friday count.</h2><p>A cover signal, 7–10 carefully selected papers, honorable mentions, and a clearer view of the week's developments. One independent issue every Friday.</p><div class="emailoctopus-inline-embed" id="emailoctopus-inline-embed" aria-label="Subscribe to The HEP Signal newsletter">
+<script async src="https://eomail5.com/form/45b9972c-ccfa-11f1-b704-ffc28d665f6e.js" data-form="45b9972c-ccfa-11f1-b704-ffc28d665f6e"></script>
+<noscript><p class="note">Enable JavaScript to load the secure EmailOctopus subscription form.</p></noscript>
+</div><div class="note">Free · In English · One curated edition every Friday</div></div></section>
+</main>
+<footer class="foot"><div class="page foot-in"><div><b>The HEP Signal</b><p>Independent commentary on new <a href="https://arxiv.org/list/hep-ph/new" target="_blank" rel="noopener noreferrer">arXiv hep-ph submissions</a>.<br>Not affiliated with or endorsed by arXiv. Featured preprints may not be peer reviewed.</p></div><p>© 2026 The HEP Signal<br><a href="/archive/">Review archive</a> · <a href="/issues/">Past issues</a></p></div></footer>
+<script>
+(() => {
+  'use strict';
+  const graph = document.getElementById('hep-signal-plot');
+  const toggle = document.getElementById('hep-signal-motion-toggle');
+  if (!graph || !toggle) return;
+  const area = document.getElementById('hep-signal-area');
+  const trace = document.getElementById('hep-signal-trace');
+  const highlight = document.getElementById('hep-signal-peak');
+  const marker = document.getElementById('hep-signal-marker');
+  const ring = document.getElementById('hep-signal-ring');
+  const label = document.getElementById('hep-signal-discover');
+  if (![area,trace,highlight,marker,ring,label].every(Boolean)) return;
+  const artwork = [area,trace,highlight,marker,ring,label];
+  const originalArtwork = artwork.map(element => ({
+    element, attributes:Array.from(element.attributes).map(attr=>[attr.name,attr.value])
+  }));
+  function restoreStaticArtwork() {
+    for (const {element,attributes} of originalArtwork) {
+      for (const attribute of Array.from(element.attributes)) element.removeAttribute(attribute.name);
+      for (const [name,value] of attributes) element.setAttribute(name,value);
+    }
+  }
+
+  // Illustrated editorial motif—not real preprint counts or detector measurements.
+  // Anchor points reproduce the original chart's small background fluctuations.
+  const anchors = [
+    [0,174],[16,170],[31,177],[48,166],[67,169],[85,173],[104,162],
+    [123,170],[142,164],[160,174],[177,168],[195,170],[210,161],
+    [224,165],[237,171],[250,169],[263,167],[276,170],[290,166],
+    [305,170],[324,161],[344,171],[361,166],[380,174],
+    [398,160],[418,169],[440,166]
+  ];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let playing = !reducedMotion.matches;
+  let visible = true;
+  let t = 0;
+  let last = 0;
+  let raf = null;
+  let peak = {x:263, start:0.0, duration:3.6, height:129, sigma:17};
+  let nextStart = 0;
+  const ease = x => x*x*(3-2*x);
+  function baseline(x, time) {
+    let i=0;
+    while (i<anchors.length-2 && anchors[i+1][0]<x) i++;
+    const a=anchors[i], b=anchors[i+1];
+    const f=(x-a[0])/(b[0]-a[0]);
+    const y=a[1]+f*(b[1]-a[1]);
+    return y+1.5*Math.sin(x*.061+time*.65)+1.2*Math.sin(x*.11-time*.47);
+  }
+  function gaussian(x, mu, sigma) {
+    const z=(x-mu)/sigma;
+    return Math.exp(-.5*z*z);
+  }
+  function draw(time) {
+    let amp=0, xPeak=263, sigma=17;
+    if (peak) {
+      const u=(time-peak.start)/peak.duration;
+      if (u>=0 && u<=1) {
+        const rise=ease(Math.min(1,u/.23));
+        const fall=ease(Math.min(1,(1-u)/.57));
+        amp=rise*fall*peak.height;
+        xPeak=peak.x;
+        sigma=peak.sigma;
+      }
+    }
+    const yAt=x => baseline(x,time)-amp*gaussian(x,xPeak,sigma);
+    let line='M0 '+yAt(0).toFixed(1);
+    for(let x=4;x<=440;x+=4) line+=' L'+x+' '+yAt(x).toFixed(1);
+    trace.setAttribute('d',line);
+    area.setAttribute('d',line+' L440 204 L0 204 Z');
+    area.setAttribute('opacity',Math.min(1,amp/95).toFixed(2));
+    let peakPath='';
+    for(let x=Math.max(0,Math.floor((xPeak-2.7*sigma)/3)*3);
+        x<=Math.min(440,xPeak+2.7*sigma);x+=3) {
+      peakPath+=(peakPath?' L':'M')+x.toFixed(1)+' '+yAt(x).toFixed(1);
+    }
+    highlight.setAttribute('d',peakPath);
+    highlight.setAttribute('opacity',Math.min(1,amp/65).toFixed(2));
+    const yPeak=yAt(xPeak);
+    marker.setAttribute('cx',xPeak.toFixed(1));
+    marker.setAttribute('cy',yPeak.toFixed(1));
+    marker.setAttribute('opacity',Math.min(1,amp/55).toFixed(2));
+    ring.setAttribute('cx',xPeak.toFixed(1));
+    ring.setAttribute('cy',yPeak.toFixed(1));
+    ring.setAttribute('r',(12 + 4*Math.sin(time*4)**2).toFixed(1));
+    ring.setAttribute('opacity',Math.min(1,amp/85).toFixed(2));
+    label.setAttribute('x',Math.min(362,Math.max(15,xPeak+10)).toFixed(1));
+    label.setAttribute('y',Math.max(15,yPeak-20).toFixed(1));
+    label.setAttribute('opacity',Math.min(1,amp/65).toFixed(2));
+  }
+  function frame(now) {
+    if (!playing || !visible) return;
+    const dt=last?Math.min(.08,(now-last)/1000):0;
+    last=now;
+    t+=dt;
+    if (peak && t>peak.start+peak.duration){
+      peak=null;
+      nextStart=t+2.1+Math.random()*2.7;
+    }
+    if (!peak && t>=nextStart) {
+      peak={x:125+Math.random()*195,start:t,duration:3.3+Math.random()*.6,
+            height:105+Math.random()*35,sigma:13+Math.random()*7};
+    }
+    draw(t);
+    raf=requestAnimationFrame(frame);
+  }
+  function sync() {
+    if (raf) cancelAnimationFrame(raf);
+    raf=null;
+    last=0;
+    if (reducedMotion.matches) {
+      restoreStaticArtwork();
+      toggle.hidden=true;
+      return;
+    }
+    toggle.hidden=false;
+    toggle.textContent=playing?'Pause':'Play';
+    toggle.setAttribute('aria-label',playing?'Pause signal animation':'Play signal animation');
+    toggle.setAttribute('aria-pressed',String(!playing));
+    if (playing && visible) raf=requestAnimationFrame(frame);
+  }
+  toggle.addEventListener('click',()=>{playing=!playing;sync()});
+  reducedMotion.addEventListener?.('change',()=>{
+    playing=!reducedMotion.matches;
+    sync();
+  });
+  document.addEventListener('visibilitychange',()=>{
+    visible=!document.hidden;
+    sync();
+  });
+  if (playing) sync(); else toggle.hidden=true;
+})();
+</script>
+</body>
+</html>
