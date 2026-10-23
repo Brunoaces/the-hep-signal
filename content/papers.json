@@ -1,1 +1,232 @@
-[]
+[
+  {
+    "id": "2610.28744",
+    "title": "The renormalization-group running of neutrino mixing is undetectable",
+    "authors": [
+      "Gabriela Barenboim",
+      "Mauricio Bustamante",
+      "Qinrui Liu"
+    ],
+    "announced": "2026-10-20",
+    "issue": "001",
+    "tier": "cover",
+    "status": "approved",
+    "headline": "Is the running of neutrino mixing really observable?",
+    "summary": "Renormalization-group (RG) equations tell us how the parameters of a quantum field theory change with the arbitrary scale used to define them. Some neutrino-phenomenology proposals take a further step: they evaluate the lepton mixing matrix at the momentum transfer of neutrino production or detection, then infer different mixing matrices at the two ends of an experiment. This can produce striking predictions, including apparent flavor change even at zero baseline. In this preprint, Gabriela Barenboim, Mauricio Bustamante, and Qinrui Liu argue that this identification confuses a running Lagrangian parameter with a physical observable. Their calculation places the neutrino on its mass shell and includes its self-energy in the production and detection amplitudes. According to the authors, the scale dependence of the running mixing matrix is canceled by quantum corrections; simply setting the renormalization scale equal to the interaction's momentum transfer while neglecting the compensating terms generates a spurious signal. They illustrate the argument in supersymmetric, seesaw, and effective-field-theory settings. They also use existing short-baseline data to constrain a hypothetical change in a mixing angle to below approximately 0.7–2.4 degrees, depending on the angle and process. The claim is substantial, but specific: it targets direct observability of RG running through process-dependent mixing, not the value of RG evolution in connecting high-scale models to low-energy measurements. Genuine process-dependent corrections or new interactions remain separate physical questions.",
+    "why_it_matters": "If the reasoning holds, several proposed zero-distance and astrophysical-flavor signals must be reassessed before being advertised as tests of RG running.",
+    "what_to_watch": "Independent one-loop amplitude calculations, responses from the affected phenomenology literature, and the separation of true nonstandard interactions from renormalization-scale artifacts.",
+    "topics": [
+      "neutrinos-astroparticle",
+      "flavor-precision"
+    ]
+  },
+  {
+    "id": "2610.28742",
+    "title": "Radiative corrections to double-β decay and their impact on experimental analyses",
+    "authors": [
+      "Jordy de Vries",
+      "Emanuele Mereghetti",
+      "Saad el Morabit",
+      "Stefan Sandner"
+    ],
+    "announced": "2026-10-20",
+    "issue": "001",
+    "tier": "selection",
+    "status": "approved",
+    "headline": "A five-percent correction with experimental consequences",
+    "summary": "Working within a heavy-nucleus effective theory, the authors calculate order-α virtual and real-photon corrections to two-neutrino and neutrinoless double-beta decay. In the large-intermediate-state-energy limit, they obtain a double-weak Sirlin correction that differs from treating the process as two separate single-beta decays. For neutrinoless decay they find an approximately 5% increase in the inclusive rate; in the two-neutrino channel, neglecting radiative effects can bias nuclear-matrix-element information inferred from measured spectra. Because photons may deposit energy in or escape a detector, the effect on reconstructed spectra is experiment-dependent.",
+    "why_it_matters": "Precision extraction of neutrino-mass and nuclear-structure information needs decay templates accurate at the percent level.",
+    "what_to_watch": "Whether collaborations implement explicit photon generation and detector-dependent acceptance in their spectral fits.",
+    "topics": [
+      "neutrinos-astroparticle",
+      "flavor-precision"
+    ]
+  },
+  {
+    "id": "2610.28731",
+    "title": "Simulation-Informed High-Velocity Dark Matter in the Effective Theory of Direct Detection",
+    "authors": [
+      "Xiuyuan Zhang",
+      "Gonzalo Herrera",
+      "Andreas Thoyas",
+      "Lina Necib"
+    ],
+    "announced": "2026-10-20",
+    "issue": "001",
+    "tier": "selection",
+    "status": "approved",
+    "headline": "How fast can local dark matter really move?",
+    "summary": "The fastest particles in the local dark-matter distribution are disproportionately important for low-mass and inelastic scattering signals. Rather than adopting only the Standard Halo Model or one simulation of Large Magellanic Cloud debris, the authors combine a Gaia-informed reconstruction of the Milky Way halo with a FIRE-2 LMC analogue and explore the nonrelativistic dark-matter–nucleon effective theory. Their modeled local distribution contains no dark matter above roughly 900 km/s. As a conditional illustration using the high-energy LZ event and its surrounding sidebands, the inferred inelastic mass splitting shifts by as much as about 130 keV across velocity assumptions; this is not evidence that the event is dark matter.",
+    "why_it_matters": "Astrophysical priors can change which dark-sector parameters an experiment excludes or appears to favor.",
+    "what_to_watch": "Independent halo reconstructions and higher-resolution simulations, especially where a result depends on the extreme velocity tail.",
+    "topics": [
+      "dark-matter"
+    ]
+  },
+  {
+    "id": "2610.29541",
+    "title": "Domain models of turbulent magnetic fields and the spectral shape of ensemble averaged axion-photon conversion",
+    "authors": [
+      "Oleksandr Khasai",
+      "Lidiia Zadorozhna",
+      "Denys Malyshev",
+      "Oleg Ruchayskiy"
+    ],
+    "announced": "2026-10-21",
+    "issue": "001",
+    "tier": "selection",
+    "status": "approved",
+    "headline": "Can turbulence leave a clean axion signature?",
+    "summary": "Axion-like particles mixing with photons in galaxy-cluster magnetic fields can generate irregular, source-dependent spectral distortions. Earlier numerical work found that averaging across sources can instead yield a smooth absorption-like feature; this paper derives its analytic spectral form. It also maps the magnetic-field energy-spectrum index a to the distribution of magnetic-domain sizes, finding β = 3 − a for 1 < a < 2 and β = 4/3 for Kolmogorov-like turbulence. The authors caution that some domain prescriptions impose artificial sharp boundaries and can mimic a different turbulence spectrum.",
+    "why_it_matters": "A transparent turbulence-to-spectrum relation helps separate modeling artifacts from potentially testable axion–photon signatures.",
+    "what_to_watch": "Tests against more realistic magnetic-field simulations and observational analyses that marginalize over turbulent-field uncertainties.",
+    "topics": [
+      "dark-matter",
+      "neutrinos-astroparticle"
+    ]
+  },
+  {
+    "id": "2610.30106",
+    "title": "On Particle Production from Bubble Collisions in the Non-runaway Regime",
+    "authors": [
+      "Fayez Abu-Ajamieh",
+      "Amine Ahriche",
+      "Sagar Modak",
+      "Nobuchika Okada"
+    ],
+    "announced": "2026-10-21",
+    "issue": "001",
+    "tier": "selection",
+    "status": "approved",
+    "headline": "Bubble collisions beyond the runaway approximation",
+    "summary": "Much of the semi-analytic literature on particle production during first-order phase transitions assumes ultra-relativistic, runaway bubble walls. This study extends calculations to finite wall velocities and tests them against numerical solutions of the Klein–Gordon equation, without relying on thin walls or the same reduced symmetry assumptions. Away from the runaway limit, the generalized analytic trapping prescription can underestimate the simulated production efficiency by orders of magnitude; the authors supply fits combining a continuum and resonance-like peak. In their illustrative dark-sector model, slower walls still suppress production relative to the ultra-relativistic limit—two distinct comparisons that should not be conflated.",
+    "why_it_matters": "Finite wall friction is central to connecting realistic cosmological phase transitions with possible dark-matter production mechanisms.",
+    "what_to_watch": "Whether the fitting prescription remains robust in fully coupled plasma dynamics and beyond the toy-model interactions used here.",
+    "topics": [
+      "cosmology-baryogenesis",
+      "dark-matter"
+    ]
+  },
+  {
+    "id": "2610.28778",
+    "title": "Quark TMDPDFs from Large to Small x: A Unified Description of CSS, DGLAP, and Small-x Double Logarithms",
+    "authors": [
+      "Swagato Mukherjee",
+      "Vladimir V. Skokov",
+      "Andrey Tarasov",
+      "Shaswat Tiwari"
+    ],
+    "announced": "2026-10-20",
+    "issue": "001",
+    "tier": "selection",
+    "status": "approved",
+    "headline": "Connecting the large-x and small-x descriptions of quarks",
+    "summary": "Parton distributions with transverse-momentum dependence require different resummation and factorization descriptions in different kinematic regimes. Extending an earlier background-field treatment of gluons to quarks, the authors compute a next-to-leading-order quark TMD beam function while retaining longitudinal and transverse momenta in the background fields. Their framework reproduces Collins–Soper–Sterman evolution, the DGLAP logarithm, and the small-x double-logarithmic limit in the appropriate regimes. It also distinguishes operator-renormalization scales from perturbative/nonperturbative separation scales; matching across regimes is demonstrated within the stated leading-power and perturbative approximations.",
+    "why_it_matters": "A consistent treatment of transverse structure is valuable for extracting hadron information across collider kinematics.",
+    "what_to_watch": "Higher-order and nonperturbative extensions, plus phenomenological comparisons relevant to the Electron–Ion Collider.",
+    "topics": [
+      "qcd"
+    ]
+  },
+  {
+    "id": "2610.28790",
+    "title": "New CP-violating sources beyond the reach of EDMs",
+    "authors": [
+      "Venus Keus"
+    ],
+    "announced": "2026-10-20",
+    "issue": "001",
+    "tier": "selection",
+    "status": "approved",
+    "headline": "CP violation that electric-dipole searches may miss",
+    "summary": "Electric-dipole-moment searches strongly constrain many new sources of CP violation, motivating mechanisms with different symmetry structure. This preprint constructs CP-violating interactions that are C-odd but P-even, whereas the usual EDM operator is C-even and P-odd. The author presents a concrete model realization and discusses its possible relevance to baryogenesis, arguing that the proposed terms do not generate EDMs directly. That selection-rule statement is narrower than claiming immunity to every conceivable higher-order or indirect constraint, which would require additional analysis.",
+    "why_it_matters": "It widens the search for cosmologically relevant CP violation beyond the operator classes most directly tested by EDM experiments.",
+    "what_to_watch": "Complete higher-order EDM contributions and quantitative baryogenesis predictions under existing collider and flavor bounds.",
+    "topics": [
+      "cosmology-baryogenesis",
+      "eft-bsm",
+      "flavor-precision"
+    ]
+  },
+  {
+    "id": "2610.29439",
+    "title": "How Far Can Foundation Models Be Distilled for Efficient Jet Tagging?",
+    "authors": [
+      "Jay Agarwal",
+      "Siddharth Khare",
+      "Dhruv Kumar"
+    ],
+    "announced": "2026-10-21",
+    "issue": "001",
+    "tier": "selection",
+    "status": "approved",
+    "headline": "Smaller models, sharper jets?",
+    "summary": "Modern jet taggers can be accurate but expensive to run, creating tension with tight inference budgets in high-energy experiments. The authors distill six teacher models—including foundation models—into smaller students, then benchmark the resulting classifiers. On their chosen benchmark, a distilled model with about 20,000 parameters surpasses published taggers trained from scratch, while one with roughly 2,000 parameters matches ParT despite having far fewer parameters. The impressive compression is benchmark-specific: deployment still depends on throughput, hardware, calibration, and robustness to changing detector conditions.",
+    "why_it_matters": "Efficient high-quality classification could reduce the computational cost of future collider analyses.",
+    "what_to_watch": "Independent reproduction on detector-level data and end-to-end latency measurements under realistic trigger and analysis constraints.",
+    "topics": [
+      "colliders"
+    ]
+  },
+  {
+    "id": "2610.28681",
+    "title": "Testing the statistical compatibility of data sets with a common prior",
+    "authors": [
+      "Pilar Coloma",
+      "Michele Maltoni",
+      "Thomas Schwetz"
+    ],
+    "announced": "2026-10-19",
+    "issue": "001",
+    "tier": "honorable",
+    "status": "approved",
+    "headline": "When two datasets share the same prior",
+    "summary": "Extends the parameter goodness-of-fit test to shared prior information; under Gaussian assumptions the statistic follows a generalized χ² distribution. The accompanying implementation may be useful in global fits.",
+    "why_it_matters": "Shared priors create correlations that must be handled to assess dataset compatibility correctly.",
+    "what_to_watch": "Applications to global neutrino fits and validation beyond the Gaussian approximation.",
+    "topics": [
+      "flavor-precision",
+      "neutrinos-astroparticle"
+    ]
+  },
+  {
+    "id": "2610.29967",
+    "title": "Gravitational Waves from New Inflation",
+    "authors": [
+      "Naoya Kitajima",
+      "Kamil Mudrunka",
+      "Kazunori Nakayama"
+    ],
+    "announced": "2026-10-21",
+    "issue": "001",
+    "tier": "honorable",
+    "status": "approved",
+    "headline": "Mapping gravitational waves from new inflation",
+    "summary": "Builds a broad prediction for gravitational-wave production in small-field new-inflation scenarios, combining classical and quantum sources. Observational reach remains model-dependent.",
+    "why_it_matters": "Multiple production channels may imprint a richer gravitational-wave spectrum than any single contribution predicts.",
+    "what_to_watch": "Parameter-space studies and realistic detector-sensitivity forecasts.",
+    "topics": [
+      "cosmology-baryogenesis"
+    ]
+  },
+  {
+    "id": "2610.29598",
+    "title": "Electromagnetic multipoles of Majorana spin-3/2 dark matter particles and implications for direct detection",
+    "authors": [
+      "Alejandro Ibarra",
+      "Onur Yonar"
+    ],
+    "announced": "2026-10-21",
+    "issue": "001",
+    "tier": "honorable",
+    "status": "approved",
+    "headline": "Direct detection of higher-spin dark matter",
+    "summary": "Derives direct-detection bounds on the allowed electromagnetic multipoles of Majorana spin-3/2 dark matter, then examines concrete realizations including gravitinos.",
+    "why_it_matters": "Constraining the electromagnetic structure of unconventional dark-matter candidates broadens the scope of direct-detection phenomenology.",
+    "what_to_watch": "Comparisons with future nuclear-recoil limits and concrete high-spin particle models.",
+    "topics": [
+      "dark-matter",
+      "eft-bsm"
+    ]
+  }
+]

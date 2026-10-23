@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "number": "001",
+    "date": "2026-10-23",
+    "title": "Is the running of neutrino mixing really observable?",
+    "intro": "Welcome to the inaugural edition of The HEP Signal. This week's selection crosses the usual boundaries: a challenge to how neutrino mixing is interpreted, radiative corrections that matter for double-beta-decay experiments, and new approaches to the astrophysical uncertainties facing dark-matter searches. We also follow axion–photon conversion through turbulent magnetic fields, particle production in cosmological phase transitions, a bridge between QCD evolution regimes, an unconventional source of CP violation, and efficient machine learning for collider events. The common thread is not a single model or anomaly: it is the work needed to turn a promising theoretical effect into a reliable observable.",
+    "closing": "The most interesting commonality this week is methodological. A renormalization scale is not a detector observable; a radiative correction does not enter a measured spectrum without a detector response; and a direct-detection limit is not independent of the assumed halo velocity distribution. Similar care is needed in translating magnetic turbulence into axion signatures, simulated phase-transition dynamics into particle yields, and jet-classification accuracy into useful experimental performance. That does not make the underlying proposals less exciting. It makes the next stage of their assessment more concrete. Across all these subfields, the central question is the same: which parts of a predicted signal survive when theoretical assumptions, astrophysical environments, and instrumental realities are treated consistently? The HEP Signal will follow those tests—not merely the initial claims.",
+    "status": "published"
+  }
+]
